@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 export (int) var SPEED = 25
 export (int)  var react_time = 200
-export (int) var shooting_delay = 1000
+export (int) var shooting_delay = 2500
 export (PackedScene) var EnemyProjectile
 
 onready var player = get_parent().get_node('Player')
