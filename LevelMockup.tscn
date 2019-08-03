@@ -60,3 +60,5 @@ text = "you win"
 [connection signal="area_entered" from="Player" to="Player" method="_on_Player_area_entered"]
 [connection signal="body_entered" from="Player" to="Player" method="_on_Player_body_entered"]
 [connection signal="hit" from="Player" to="." method="_on_Player_hit"]
+[connection signal="hit" from="Enemy" to="." method="_on_Enemy_hit"]
+[connection signal="hit" from="Enemy2" to="." method="_on_Enemy_hit"]

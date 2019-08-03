@@ -11,13 +11,18 @@ func _ready():
 #	pass
 
 func _on_Player_hit():
-#	$GUI/PlayerHealth.text = str($Player.health)
-	match check_win_condition():
-		WIN:
-			$GUI/WinText.visible = true
-		LOSE:
-			$GUI/WinText.text = 'you lose'
-			$GUI/WinText.visible = true
+	$GUI/PlayerHealth.text = str($Player.health)
+
+	if $Player.health == 0:
+		game_over()
+
+func win_game():
+	$GUI/WinText.text = 'you win'
+	$GUI/WinText.visible = true
+
+func game_over():
+	$GUI/WinText.text = 'you lose'
+	$GUI/WinText.visible = true
 
 func check_win_condition():
 	var won = true
@@ -31,3 +36,11 @@ func check_win_condition():
 		return WIN
 	else:
 		return CONTINUE
+
+func _on_Enemy_hit():
+	match check_win_condition():
+		WIN:
+			win_game()
+		LOSE:
+			game_over()
+

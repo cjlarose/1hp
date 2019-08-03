@@ -11,3 +11,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	position += direction * SPEED
+
+func _on_Projectile_body_entered(enemy):
+	enemy.take_damage()

@@ -1,5 +1,7 @@
 extends RigidBody2D
 
+signal hit
+
 var health
 
 # Called when the node enters the scene tree for the first time.
@@ -10,3 +12,6 @@ func _ready():
 #func _process(delta):
 #	pass
 
+func take_damage():
+	health -= 1
+	emit_signal('hit')

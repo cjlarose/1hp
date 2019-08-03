@@ -43,7 +43,5 @@ func get_input_direction():
 	)
 
 func _on_Player_body_entered(body):
-	if 'enemies' in body.get_groups():
-		body.health -= 1
-		print(body.health)
-		emit_signal('hit')
+	health -= 10
+	emit_signal('hit')
