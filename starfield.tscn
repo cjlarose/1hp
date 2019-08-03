@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/starfield/starfield_00.png" type="Texture" id=1]
+[ext_resource path="res://assets/starfield/starfield_01.png" type="Texture" id=2]
+[ext_resource path="res://assets/starfield/starfield_02.png" type="Texture" id=3]
+[ext_resource path="res://assets/starfield/starfield_03.png" type="Texture" id=4]
+
+[node name="starfield" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 200, 200 )
+texture = ExtResource( 1 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 200, 200 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 600, 200 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 200, 200 )
+
+[node name="Sprite3" type="Sprite" parent="."]
+position = Vector2( 1000, 200 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 200, 200 )
+
+[node name="Sprite4" type="Sprite" parent="."]
+position = Vector2( 1400, 200 )
+texture = ExtResource( 4 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 200, 200 )
