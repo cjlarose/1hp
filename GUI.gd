@@ -9,9 +9,9 @@ func _ready():
 #	pass
 
 func show_win_game():
-	$WinText.text = 'you win'
-	$WinText.visible = true
+	$MessageLabel.text = 'you win'
+	$MessageLabel.visible = true
 
 func show_game_over():
-	$WinText.text = 'you lose'
-	$WinText.visible = true
+	$MessageLabel.text = 'you lose'
+	$MessageLabel.visible = true

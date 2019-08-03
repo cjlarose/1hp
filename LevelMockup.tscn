@@ -26,7 +26,7 @@ position = Vector2( 1475, 838 )
 [node name="GUI" type="Node2D" parent="."]
 script = ExtResource( 4 )
 
-[node name="WinText" type="Label" parent="GUI"]
+[node name="MessageLabel" type="Label" parent="GUI"]
 visible = false
 margin_left = 96.0
 margin_top = 199.0
