@@ -41,7 +41,10 @@ func handle_movement(delta):
 	else:
 		motion = motion.linear_interpolate(Vector2(0,0), DEC)
 	
-	position += motion * MOVE_SPEED * delta
+	var target_position = position + motion * MOVE_SPEED * delta
+	if target_position.x > 100 and target_position.x < 1700 and \
+	   target_position.y > 100 and target_position.y < 1100:
+		position = target_position
 
 func handle_shooting():
 	if Input.is_action_just_pressed('ui_accept'):
