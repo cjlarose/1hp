@@ -56,6 +56,10 @@ drag_margin_bottom = 0.1
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PoolVector2Array( 59.0426, -0.402748, 41.4188, -15.8236, 19.0952, -19.3484, 0.443329, -33.5943, -21.4396, -32.7131, -21.5865, 30.1452, -0.437851, 30.1452, 18.5078, 18.1023, 41.4188, 13.4026 )
+
+[node name="RescueTimer" type="Timer" parent="."]
+one_shot = true
 [connection signal="area_entered" from="." to="." method="_on_Player_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_Player_body_entered"]
 [connection signal="hit" from="." to="." method="_on_Player_hit"]
+[connection signal="timeout" from="RescueTimer" to="." method="_on_RescueTimer_timeout"]

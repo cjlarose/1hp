@@ -1,10 +1,10 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Projectile.gd" type="Script" id=1]
-[ext_resource path="res://assets/projectile.png" type="Texture" id=2]
+[ext_resource path="res://assets/projectile/laser rotate 10 deg and smaller center.png" type="Texture" id=2]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 9.97531, 12.3086 )
+[sub_resource type="CircleShape2D" id=3]
+radius = 13.2075
 
 [sub_resource type="SpriteFrames" id=2]
 animations = [ {
@@ -15,13 +15,16 @@ animations = [ {
 } ]
 
 [node name="Projectile" type="Area2D"]
+collision_layer = 8
+collision_mask = 14
 script = ExtResource( 1 )
 SPEED = 25
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 3.55556, 0.395061 )
-shape = SubResource( 1 )
+position = Vector2( 0.197543, -5.06639e-07 )
+shape = SubResource( 3 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.33, 0.33 )
 frames = SubResource( 2 )
 [connection signal="body_entered" from="." to="." method="_on_Projectile_body_entered"]

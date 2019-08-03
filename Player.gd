@@ -15,6 +15,7 @@ signal hit
 
 var face_direction
 var velocity
+var currently_rescuing
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -22,6 +23,7 @@ func _ready():
 	face_direction = Vector2(0, 1)
 	$HealthBar.max_health = 4
 	$HealthBar.current_health = 4
+	currently_rescuing = null
 
 func _process(delta):
 	handle_movement(delta)
@@ -61,14 +63,22 @@ func handle_rescuing():
 	if Input.is_action_just_pressed('rescue'):
 		var enemy = get_enemy_in_range()
 		if enemy and enemy.get_node('HealthBar').current_health == 1:
-			print('neutralized enemy!')
-			if len(get_tree().get_nodes_in_group('enemies')) == 1:
-				get_parent().win_game()
-			enemy.queue_free()
+			currently_rescuing = enemy
+			$RescueTimer.start()
+	elif Input.is_action_pressed('rescue'):
+		if currently_rescuing:
+			# Player/Enemy moved out of range
+			if position.distance_to(currently_rescuing.position) > TRACTOR_RANGE:
+				currently_rescuing = null
+				$RescueTimer.stop()
+	elif currently_rescuing:
+		# No longer pressing Shift
+		currently_rescuing = null
+		$RescueTimer.stop()
 
 func get_enemy_in_range():
 	for enemy in get_tree().get_nodes_in_group('enemies'):
-		if position.distance_to(enemy.position) < TRACTOR_RANGE:
+		if position.distance_to(enemy.position) <= TRACTOR_RANGE:
 			return enemy
 
 func _on_Player_body_entered(body):
@@ -78,9 +88,13 @@ func _on_Player_body_entered(body):
 
 	take_damage()
 
-func _on_Player_area_entered(body):
-	pass
-
 func take_damage():
 	$HealthBar.update_current_health($HealthBar.current_health - 1)
 	emit_signal('hit')
+
+func _on_RescueTimer_timeout():
+	if currently_rescuing:
+		if len(get_tree().get_nodes_in_group('enemies')) == 1:
+			get_parent().win_game()
+		currently_rescuing.queue_free()
+		currently_rescuing = null
