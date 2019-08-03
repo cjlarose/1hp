@@ -75,13 +75,6 @@ func _on_Player_body_entered(body):
 	print('_on_Player_body_entered')
 	if 'mines' in body.get_groups():
 		body.detonate()
-
-  take_damage()
-
-func _on_Player_area_entered(body):
-	pass
-
-func _on_Player_body_entered(body):
 	take_damage()
 
 func take_damage():
