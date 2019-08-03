@@ -14,7 +14,9 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[node name="Enemy" type="RigidBody2D"]
+[node name="Enemy" type="RigidBody2D" groups=[
+"enemies",
+]]
 gravity_scale = 0.0
 script = ExtResource( 1 )
 

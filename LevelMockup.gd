@@ -13,4 +13,13 @@ func _ready():
 #	pass
 
 func _on_Player_hit():
-	$GUI/PlayerHealth.text = str($Player.health)
+#	$GUI/PlayerHealth.text = str($Player.health)
+	if check_win_condition():
+		$GUI/WinText.visible = true
+
+func check_win_condition():
+	for child in get_tree().get_nodes_in_group('enemies'):
+		if child.health != 1:
+			return false
+
+	return true

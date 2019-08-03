@@ -47,6 +47,14 @@ position = Vector2( 376, 412 )
 margin_right = 40.0
 margin_bottom = 14.0
 text = "100"
+
+[node name="WinText" type="Label" parent="GUI"]
+visible = false
+margin_left = 96.0
+margin_top = 199.0
+margin_right = 145.0
+margin_bottom = 213.0
+text = "you win"
 [connection signal="area_entered" from="Player" to="Player" method="_on_Player_area_entered"]
 [connection signal="body_entered" from="Player" to="Player" method="_on_Player_body_entered"]
 [connection signal="hit" from="Player" to="." method="_on_Player_hit"]
