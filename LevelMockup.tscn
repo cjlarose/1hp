@@ -16,6 +16,9 @@ position = Vector2( 1041, 117 )
 [node name="Enemy2" parent="." instance=ExtResource( 3 )]
 position = Vector2( 115, 497 )
 
+[node name="Enemy3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1475, 838 )
+
 [node name="GUI" type="Node2D" parent="."]
 
 [node name="WinText" type="Label" parent="GUI"]
@@ -35,3 +38,4 @@ tile_data = PoolIntArray( 0, 1, 0, 1, 1, 0, 2, 1, 0, 3, 1, 0, 4, 1, 0, 5, 1, 0, 
 [connection signal="hit" from="Player" to="." method="_on_Player_hit"]
 [connection signal="hit" from="Enemy" to="." method="_on_Enemy_hit"]
 [connection signal="hit" from="Enemy2" to="." method="_on_Enemy_hit"]
+[connection signal="hit" from="Enemy3" to="." method="_on_Enemy_hit"]
