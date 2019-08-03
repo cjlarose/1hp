@@ -24,7 +24,7 @@ func take_damage():
 			get_parent().game_over()
 			$AnimatedSprite.animation = 'default'
 		1:
-			$AnimatedSprite.animation = 'neutralized'
+			$AnimatedSprite.animation = '1hp'
 		_:
 			$AnimatedSprite.animation = 'default'
 

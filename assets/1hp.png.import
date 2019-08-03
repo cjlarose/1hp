@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/enemy-neutralized.png-d7b98fd39351c8f41e3b175ebf97905a.stex"
+path="res://.import/1hp.png-d97c80a292e606165e94e35e594406a5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/enemy-neutralized.png"
-dest_files=[ "res://.import/enemy-neutralized.png-d7b98fd39351c8f41e3b175ebf97905a.stex" ]
+source_file="res://assets/1hp.png"
+dest_files=[ "res://.import/1hp.png-d97c80a292e606165e94e35e594406a5.stex" ]
 
 [params]
 
