@@ -10,11 +10,6 @@
 [ext_resource path="res://HealthBar.tscn" type="PackedScene" id=8]
 
 [sub_resource type="SpriteFrames" id=1]
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 51, 50 )
-
-[sub_resource type="SpriteFrames" id=2]
->>>>>>> Player take_damage()
 animations = [ {
 "frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
 "loop": true,
