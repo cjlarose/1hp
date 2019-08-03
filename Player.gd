@@ -76,8 +76,14 @@ func _on_Player_body_entered(body):
 	if 'mines' in body.get_groups():
 		body.detonate()
 
-	$HealthBar.update_current_health($HealthBar.current_health - 1)
-	emit_signal('hit')
+  take_damage()
 
 func _on_Player_area_entered(body):
 	pass
+
+func _on_Player_body_entered(body):
+	take_damage()
+
+func take_damage():
+	$HealthBar.update_current_health($HealthBar.current_health - 1)
+	emit_signal('hit')
