@@ -5,9 +5,9 @@ export (PackedScene) var Projectile
 export (int) var SPEED = 500
 export (int) var TRACTOR_RANGE = 200
 const TURN_SPEED = 180
-const MOVE_SPEED = 150
+const MOVE_SPEED = 220
 const ACC = 0.1
-const DEC = 0.01
+const DEC = 0.0075
 
 var motion = Vector2(0,0)
 
