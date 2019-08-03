@@ -2,7 +2,7 @@ extends Area2D
 
 export (PackedScene) var Projectile
 
-export (int) var SPEED = 200
+export (int) var SPEED = 500
 export (int) var MAX_HEALTH = 30
 
 signal hit
@@ -17,16 +17,16 @@ func _ready():
 	face_direction = Vector2(0, 1)
 
 func _process(delta):
-	handle_movement()
+	handle_movement(delta)
 	handle_shooting()
 
-func handle_movement():
+func handle_movement(delta):
 	var direction = get_input_direction().normalized()
 
 	# If the Player moved, update their face_direction, otherwise maintain it
 	if direction != Vector2(0, 0):
 		face_direction = direction
-	position += direction * SPEED
+	position += direction * SPEED * delta
 
 func handle_shooting():
 	if Input.is_action_just_pressed('ui_accept'):
