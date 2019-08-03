@@ -4,10 +4,17 @@ export (PackedScene) var Projectile
 
 export (int) var SPEED = 500
 export (int) var TRACTOR_RANGE = 200
+const TURN_SPEED = 180
+const MOVE_SPEED = 150
+const ACC = 0.1
+const DEC = 0.01
+
+var motion = Vector2(0,0)
 
 signal hit
 
 var face_direction
+var velocity
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -22,16 +29,19 @@ func _process(delta):
 	handle_rescuing()
 
 func handle_movement(delta):
-	var direction = get_input_direction().normalized()
-
-	# If the Player moved, update their face_direction, otherwise maintain it
-	if direction != Vector2(0, 0):
-		face_direction = direction
-
-	var target_position = position + direction * SPEED * delta
-	if target_position.x > 100 and target_position.x < 1700 and \
-	   target_position.y > 100 and target_position.y < 1100:
-		position = target_position
+	if Input.is_action_pressed("ui_left"):
+		rotation_degrees -= TURN_SPEED * delta
+	if Input.is_action_pressed("ui_right"):
+		rotation_degrees += TURN_SPEED * delta
+		
+	face_direction = Vector2(1,0).rotated(rotation)
+	
+	if Input.is_action_pressed("ui_up"):
+		motion = motion.linear_interpolate(face_direction, ACC)
+	else:
+		motion = motion.linear_interpolate(Vector2(0,0), DEC)
+	
+	position += motion * MOVE_SPEED * delta
 
 func handle_shooting():
 	if Input.is_action_just_pressed('ui_accept'):
@@ -53,12 +63,6 @@ func get_enemy_in_range():
 	for enemy in get_tree().get_nodes_in_group('enemies'):
 		if position.distance_to(enemy.position) < TRACTOR_RANGE:
 			return enemy
-
-func get_input_direction():
-	return Vector2(
-		int(Input.is_action_pressed("ui_right")) - int(Input.is_action_pressed("ui_left")),
-		int(Input.is_action_pressed("ui_down")) - int(Input.is_action_pressed("ui_up"))
-	)
 
 func _on_Player_body_entered(body):
 	print('_on_Player_body_entered')
