@@ -44,7 +44,7 @@ func handle_shooting():
 func handle_rescuing():
 	if Input.is_action_just_pressed('rescue'):
 		var enemy = get_enemy_in_range()
-		if enemy and enemy.health == 1:
+		if enemy and enemy.get_node('HealthBar').current_health == 1:
 			print('neutralized enemy!')
 			if len(get_tree().get_nodes_in_group('enemies')) == 1:
 				get_parent().win_game()

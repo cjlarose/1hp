@@ -21,9 +21,7 @@ animations = [ {
 "speed": 0.0
 } ]
 
-[node name="Node2D" type="Node2D"]
-
-[node name="HealthBar" type="AnimatedSprite" parent="."]
+[node name="HealthBar" type="AnimatedSprite"]
 frames = SubResource( 1 )
 animation = "increasing"
 frame = 1
