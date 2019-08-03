@@ -2,12 +2,13 @@
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://Projectile.tscn" type="PackedScene" id=2]
-[ext_resource path="res://sketch1564867457772.png" type="Texture" id=3]
-[ext_resource path="res://20190803_162314.png" type="Texture" id=4]
-[ext_resource path="res://sketch1564865564137.png" type="Texture" id=5]
-[ext_resource path="res://sketch1564865766390.png" type="Texture" id=6]
-[ext_resource path="res://sketch1564865851491.png" type="Texture" id=7]
+[ext_resource path="res://assets/Player/sketch1564867457772.png" type="Texture" id=3]
+[ext_resource path="res://assets/Player/20190803_162314.png" type="Texture" id=4]
+[ext_resource path="res://assets/Player/sketch1564865564137.png" type="Texture" id=5]
+[ext_resource path="res://assets/Player/sketch1564865766390.png" type="Texture" id=6]
+[ext_resource path="res://assets/Player/sketch1564865851491.png" type="Texture" id=7]
 [ext_resource path="res://HealthBar.tscn" type="PackedScene" id=8]
+
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 51, 50 )

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/20190803_162314.png-1717ed798c7ae15f42a08a1c61d6e9ff.stex"
+path="res://.import/20190803_162314.png-1a6bf714904f37a0ac417a221babcb67.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://20190803_162314.png"
-dest_files=[ "res://.import/20190803_162314.png-1717ed798c7ae15f42a08a1c61d6e9ff.stex" ]
+source_file="res://assets/Player/20190803_162314.png"
+dest_files=[ "res://.import/20190803_162314.png-1a6bf714904f37a0ac417a221babcb67.stex" ]
 
 [params]
 
