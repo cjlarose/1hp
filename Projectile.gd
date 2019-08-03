@@ -13,5 +13,8 @@ func _process(delta):
 	position += direction * SPEED
 
 func _on_Projectile_body_entered(enemy):
-	enemy.take_damage()
+	if 'enemies' in enemy.get_groups():
+		enemy.take_damage()
+	elif 'mines' in enemy.get_groups():
+		enemy.detonate()
 	queue_free()

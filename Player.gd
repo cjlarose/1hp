@@ -73,6 +73,9 @@ func get_enemy_in_range():
 
 func _on_Player_body_entered(body):
 	print('_on_Player_body_entered')
+	if 'mines' in body.get_groups():
+		body.detonate()
+
 	$HealthBar.update_current_health($HealthBar.current_health - 1)
 	emit_signal('hit')
 
