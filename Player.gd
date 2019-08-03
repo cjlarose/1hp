@@ -2,8 +2,9 @@ extends Area2D
 
 export (PackedScene) var Projectile
 
-export (int) var SPEED = 200
+export (int) var SPEED = 500
 export (int) var MAX_HEALTH = 30
+export (int) var TRACTOR_RANGE = 200
 
 signal hit
 
@@ -17,24 +18,42 @@ func _ready():
 	face_direction = Vector2(0, 1)
 
 func _process(delta):
-	handle_movement()
+	handle_movement(delta)
 	handle_shooting()
+	handle_rescuing()
 
-func handle_movement():
+func handle_movement(delta):
 	var direction = get_input_direction().normalized()
 
 	# If the Player moved, update their face_direction, otherwise maintain it
 	if direction != Vector2(0, 0):
 		face_direction = direction
-	position += direction * SPEED
+
+	var target_position = position + direction * SPEED * delta
+	if target_position.x > 100 and target_position.x < 1100 and \
+	   target_position.y > 100 and target_position.y < 700:
+		position = target_position
 
 func handle_shooting():
 	if Input.is_action_just_pressed('ui_accept'):
-		print('fire')
 		var projectile = Projectile.instance()
 		projectile.position = position
 		projectile.direction = face_direction
 		get_parent().add_child(projectile)
+
+func handle_rescuing():
+	if Input.is_action_just_pressed('rescue'):
+		var enemy = get_enemy_in_range()
+		if enemy and enemy.health == 1:
+			print('neutralized enemy!')
+			if len(get_tree().get_nodes_in_group('enemies')) == 1:
+				get_parent().win_game()
+			enemy.queue_free()
+
+func get_enemy_in_range():
+	for enemy in get_tree().get_nodes_in_group('enemies'):
+		if position.distance_to(enemy.position) < TRACTOR_RANGE:
+			return enemy
 
 func get_input_direction():
 	return Vector2(
@@ -43,6 +62,7 @@ func get_input_direction():
 	)
 
 func _on_Player_body_entered(body):
+	print('_on_Player_body_entered')
 	health -= 10
 	emit_signal('hit')
 

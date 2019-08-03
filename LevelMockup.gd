@@ -4,7 +4,7 @@ enum { WIN, LOSE, CONTINUE }
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$Player.position = $Player/StartPosition.position
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
@@ -19,29 +19,23 @@ func _on_Player_hit():
 func win_game():
 	$GUI/WinText.text = 'you win'
 	$GUI/WinText.visible = true
+	destroy_player_and_all_enemies()
 
 func game_over():
 	$GUI/WinText.text = 'you lose'
 	$GUI/WinText.visible = true
+	destroy_player_and_all_enemies()
+
+func destroy_player_and_all_enemies():
+	$Player.queue_free()
+	for enemy in get_tree().get_nodes_in_group('enemies'):
+		enemy.queue_free()
 
 func check_win_condition():
-	var won = true
-	for child in get_tree().get_nodes_in_group('enemies'):
-		if child.health <= 0:
-			return LOSE
-		elif child.health != 1:
-			won = false
-
-	if won:
+	if len(get_tree().get_nodes_in_group('enemies')) == 0:
 		return WIN
 	else:
 		return CONTINUE
 
 func _on_Enemy_hit():
-	print('_on_Enemy_hit')
-	match check_win_condition():
-		WIN:
-			win_game()
-		LOSE:
-			game_over()
-
+	pass
