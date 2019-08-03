@@ -38,6 +38,7 @@ func check_win_condition():
 		return CONTINUE
 
 func _on_Enemy_hit():
+	print('_on_Enemy_hit')
 	match check_win_condition():
 		WIN:
 			win_game()

@@ -3,7 +3,7 @@ extends Area2D
 export (PackedScene) var Projectile
 
 export (int) var SPEED = 200
-export (int) var MAX_HEALTH = 100
+export (int) var MAX_HEALTH = 30
 
 signal hit
 

@@ -16,6 +16,7 @@ animations = [ {
 
 [node name="Projectile" type="Area2D"]
 script = ExtResource( 1 )
+SPEED = 25
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 3.55556, 0.395061 )

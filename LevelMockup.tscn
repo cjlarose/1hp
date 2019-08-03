@@ -48,7 +48,7 @@ position = Vector2( 376, 412 )
 [node name="PlayerHealth" type="Label" parent="GUI"]
 margin_right = 40.0
 margin_bottom = 14.0
-text = "100"
+text = "30"
 
 [node name="WinText" type="Label" parent="GUI"]
 visible = false

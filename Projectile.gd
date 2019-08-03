@@ -14,3 +14,4 @@ func _process(delta):
 
 func _on_Projectile_body_entered(enemy):
 	enemy.take_damage()
+	queue_free()
