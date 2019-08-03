@@ -14,4 +14,13 @@ func _ready():
 
 func take_damage():
 	health -= 1
+	match health:
+		0:
+			# TODO: blow up or something
+			pass
+		1:
+			$AnimatedSprite.animation = 'neutralized'
+		_:
+			$AnimatedSprite.animation = 'default'
+
 	emit_signal('hit')
