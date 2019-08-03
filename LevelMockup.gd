@@ -15,13 +15,11 @@ func _on_Player_hit():
 		game_over()
 
 func win_game():
-	$GUI/WinText.text = 'you win'
-	$GUI/WinText.visible = true
+	$GUI.show_win_game()
 	destroy_player_and_all_enemies()
 
 func game_over():
-	$GUI/WinText.text = 'you lose'
-	$GUI/WinText.visible = true
+	$GUI.show_game_over()
 	destroy_player_and_all_enemies()
 
 func destroy_player_and_all_enemies():
