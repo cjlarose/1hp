@@ -2,8 +2,8 @@
 
 [ext_resource path="res://Enemy.gd" type="Script" id=1]
 [ext_resource path="res://EnemyProjectile.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/enemy.png" type="Texture" id=3]
-[ext_resource path="res://assets/1hp.png" type="Texture" id=4]
+[ext_resource path="res://assets/enemy_ship/sketch1564864862492.png" type="Texture" id=3]
+[ext_resource path="res://assets/enemy_ship/sketch1564864862492-green.png" type="Texture" id=4]
 [ext_resource path="res://HealthBar.tscn" type="PackedScene" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -37,6 +37,7 @@ __meta__ = {
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+scale = Vector2( 0.25, 0.25 )
 frames = SubResource( 2 )
 __meta__ = {
 "_edit_lock_": true
