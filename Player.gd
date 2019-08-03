@@ -28,7 +28,11 @@ func handle_movement(delta):
 	# If the Player moved, update their face_direction, otherwise maintain it
 	if direction != Vector2(0, 0):
 		face_direction = direction
-	position += direction * SPEED * delta
+
+	var target_position = position + direction * SPEED * delta
+	if target_position.x > 100 and target_position.x < 1100 and \
+	   target_position.y > 100 and target_position.y < 700:
+		position = target_position
 
 func handle_shooting():
 	if Input.is_action_just_pressed('ui_accept'):
@@ -58,6 +62,7 @@ func get_input_direction():
 	)
 
 func _on_Player_body_entered(body):
+	print('_on_Player_body_entered')
 	health -= 10
 	emit_signal('hit')
 
