@@ -4,7 +4,7 @@ export (PackedScene) var Projectile
 
 export (int) var SPEED = 500
 export (int) var MAX_HEALTH = 30
-export (int) var TRACTOR_RANGE = 250
+export (int) var TRACTOR_RANGE = 200
 
 signal hit
 

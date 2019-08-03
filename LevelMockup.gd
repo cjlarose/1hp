@@ -4,7 +4,7 @@ enum { WIN, LOSE, CONTINUE }
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	$Player.position = $Player/StartPosition.position
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
@@ -39,4 +39,3 @@ func check_win_condition():
 
 func _on_Enemy_hit():
 	pass
-
