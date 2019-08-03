@@ -19,7 +19,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	handle_shooting()
+	if $HealthBar.current_health != 1:
+		handle_shooting()
 
 	var direction_to_player = (player.position - position).normalized()
 	set_dir(direction_to_player)
