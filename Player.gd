@@ -4,6 +4,7 @@ export (PackedScene) var Projectile
 
 export (int) var SPEED = 500
 export (int) var MAX_HEALTH = 30
+export (int) var TRACTOR_RANGE = 250
 
 signal hit
 
@@ -19,6 +20,7 @@ func _ready():
 func _process(delta):
 	handle_movement(delta)
 	handle_shooting()
+	handle_rescuing()
 
 func handle_movement(delta):
 	var direction = get_input_direction().normalized()
@@ -30,11 +32,24 @@ func handle_movement(delta):
 
 func handle_shooting():
 	if Input.is_action_just_pressed('ui_accept'):
-		print('fire')
 		var projectile = Projectile.instance()
 		projectile.position = position
 		projectile.direction = face_direction
 		get_parent().add_child(projectile)
+
+func handle_rescuing():
+	if Input.is_action_just_pressed('rescue'):
+		var enemy = get_enemy_in_range()
+		if enemy and enemy.health == 1:
+			print('neutralized enemy!')
+			if len(get_tree().get_nodes_in_group('enemies')) == 1:
+				get_parent().win_game()
+			enemy.queue_free()
+
+func get_enemy_in_range():
+	for enemy in get_tree().get_nodes_in_group('enemies'):
+		if position.distance_to(enemy.position) < TRACTOR_RANGE:
+			return enemy
 
 func get_input_direction():
 	return Vector2(

@@ -22,6 +22,7 @@ func take_damage():
 	match health:
 		0:
 			# TODO: blow up or something
+			get_parent().game_over()
 			$AnimatedSprite.animation = 'default'
 		1:
 			$AnimatedSprite.animation = 'neutralized'

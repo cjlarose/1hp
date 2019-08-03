@@ -32,22 +32,11 @@ func destroy_player_and_all_enemies():
 		enemy.queue_free()
 
 func check_win_condition():
-	var won = true
-	for child in get_tree().get_nodes_in_group('enemies'):
-		if child.health <= 0:
-			return LOSE
-		elif child.health != 1:
-			won = false
-
-	if won:
+	if len(get_tree().get_nodes_in_group('enemies')) == 0:
 		return WIN
 	else:
 		return CONTINUE
 
 func _on_Enemy_hit():
-	match check_win_condition():
-		WIN:
-			win_game()
-		LOSE:
-			game_over()
+	pass
 
