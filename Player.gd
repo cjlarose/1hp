@@ -38,8 +38,12 @@ func handle_movement(delta):
 	
 	if Input.is_action_pressed("ui_up"):
 		motion = motion.linear_interpolate(face_direction, ACC)
+		if $AnimatedSprite.animation == 'default':
+			$AnimatedSprite.play('Thrust')
 	else:
 		motion = motion.linear_interpolate(Vector2(0,0), DEC)
+		if $AnimatedSprite.animation == 'Thrust':
+			$AnimatedSprite.set_animation('default')
 	
 	var target_position = position + motion * MOVE_SPEED * delta
 	if target_position.x > 100 and target_position.x < 1700 and \
