@@ -45,3 +45,6 @@ func get_input_direction():
 func _on_Player_body_entered(body):
 	health -= 10
 	emit_signal('hit')
+
+func _on_Player_area_entered(body):
+	pass
