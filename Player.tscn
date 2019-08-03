@@ -1,28 +1,24 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://Projectile.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/Player/sketch1564867457772.png" type="Texture" id=3]
-[ext_resource path="res://assets/Player/20190803_162314.png" type="Texture" id=4]
-[ext_resource path="res://assets/Player/sketch1564865564137.png" type="Texture" id=5]
-[ext_resource path="res://assets/Player/sketch1564865766390.png" type="Texture" id=6]
-[ext_resource path="res://assets/Player/sketch1564865851491.png" type="Texture" id=7]
+[ext_resource path="res://assets/Player/20190803_162314.png" type="Texture" id=3]
+[ext_resource path="res://assets/Player/sketch1564865564137.png" type="Texture" id=4]
+[ext_resource path="res://assets/Player/sketch1564865766390.png" type="Texture" id=5]
+[ext_resource path="res://assets/Player/sketch1564865851491.png" type="Texture" id=6]
+[ext_resource path="res://assets/Player/sketch1564867457772.png" type="Texture" id=7]
 [ext_resource path="res://HealthBar.tscn" type="PackedScene" id=8]
 
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 51, 50 )
-
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 3 ) ],
-"loop": true,
-"name": "default",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
 "loop": true,
 "name": "Thrust",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "default",
 "speed": 5.0
 } ]
 
@@ -30,16 +26,10 @@ animations = [ {
 script = ExtResource( 1 )
 Projectile = ExtResource( 2 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
-__meta__ = {
-"_edit_lock_": true
-}
-
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 rotation = 2.39983
 scale = Vector2( 0.125, 0.125 )
-frames = SubResource( 2 )
+frames = SubResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -61,6 +51,9 @@ drag_margin_left = 0.1
 drag_margin_top = 0.1
 drag_margin_right = 0.1
 drag_margin_bottom = 0.1
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 59.0426, -0.402748, 41.4188, -15.8236, 19.0952, -19.3484, 0.443329, -33.5943, -21.4396, -32.7131, -21.5865, 30.1452, -0.437851, 30.1452, 18.5078, 18.1023, 41.4188, 13.4026 )
 [connection signal="area_entered" from="." to="." method="_on_Player_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_Player_body_entered"]
 [connection signal="hit" from="." to="." method="_on_Player_hit"]
