@@ -36,6 +36,19 @@ __meta__ = {
 position = Vector2( 539, 291 )
 
 [node name="HealthBar" parent="." instance=ExtResource( 4 )]
+
+[node name="Camera" type="Camera2D" parent="."]
+current = true
+limit_left = 0
+limit_top = 0
+limit_right = 1800
+limit_bottom = 1200
+smoothing_enabled = true
+smoothing_speed = 10.0
+drag_margin_left = 0.1
+drag_margin_top = 0.1
+drag_margin_right = 0.1
+drag_margin_bottom = 0.1
 [connection signal="area_entered" from="." to="." method="_on_Player_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_Player_body_entered"]
 [connection signal="hit" from="." to="." method="_on_Player_hit"]

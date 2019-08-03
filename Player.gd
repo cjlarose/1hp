@@ -29,8 +29,8 @@ func handle_movement(delta):
 		face_direction = direction
 
 	var target_position = position + direction * SPEED * delta
-	if target_position.x > 100 and target_position.x < 1100 and \
-	   target_position.y > 100 and target_position.y < 700:
+	if target_position.x > 100 and target_position.x < 1700 and \
+	   target_position.y > 100 and target_position.y < 1100:
 		position = target_position
 
 func handle_shooting():
