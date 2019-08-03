@@ -15,7 +15,7 @@ signal hit
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	randomize()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -53,6 +53,7 @@ func handle_shooting():
 	if current_time - prev_shooting_time > shooting_delay:
 		var projectile = EnemyProjectile.instance()
 		projectile.position = position
-		projectile.direction = dir
+		projectile.direction = dir.rotated(rand_range(-0.5, 0.5))
+
 		get_parent().add_child(projectile)
 		prev_shooting_time = current_time
