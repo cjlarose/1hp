@@ -11,9 +11,7 @@ func _ready():
 #	pass
 
 func _on_Player_hit():
-	$GUI/PlayerHealth.text = str($Player.health)
-
-	if $Player.health == 0:
+	if $Player/HealthBar.current_health == 0:
 		game_over()
 
 func win_game():

@@ -3,19 +3,18 @@ extends Area2D
 export (PackedScene) var Projectile
 
 export (int) var SPEED = 500
-export (int) var MAX_HEALTH = 30
 export (int) var TRACTOR_RANGE = 200
 
 signal hit
 
-var health
 var face_direction
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
-	health = MAX_HEALTH
 	face_direction = Vector2(0, 1)
+	$HealthBar.max_health = 4
+	$HealthBar.current_health = 4
 
 func _process(delta):
 	handle_movement(delta)
@@ -63,7 +62,7 @@ func get_input_direction():
 
 func _on_Player_body_entered(body):
 	print('_on_Player_body_entered')
-	health -= 10
+	$HealthBar.update_current_health($HealthBar.current_health - 1)
 	emit_signal('hit')
 
 func _on_Player_area_entered(body):
