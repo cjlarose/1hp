@@ -1,6 +1,6 @@
 extends Area2D
 
-export (int) var SPEED = 10
+export (int) var SPEED = 7.0
 
 var direction
 
