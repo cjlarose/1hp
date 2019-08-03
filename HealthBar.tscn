@@ -24,7 +24,6 @@ animations = [ {
 [node name="Node2D" type="Node2D"]
 
 [node name="HealthBar" type="AnimatedSprite" parent="."]
-position = Vector2( 60.028, 25.3965 )
 frames = SubResource( 1 )
 animation = "increasing"
 frame = 1
