@@ -1,5 +1,6 @@
 extends Area2D
 
+export (PackedScene) var AuraSoundEffect
 var curr_length = 0
 var reached = false;
 
@@ -9,7 +10,7 @@ var reached = false;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	add_child(AuraSoundEffect.instance())
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
