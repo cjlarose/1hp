@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://MainMenu.gd" type="Script" id=1]
+[ext_resource path="res://Title.tscn" type="PackedScene" id=2]
+[ext_resource path="res://HowToPlay.tscn" type="PackedScene" id=3]
+[ext_resource path="res://audio/title_screen_level_1.ogg" type="AudioStream" id=4]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource( 1 )
+Title = ExtResource( 2 )
+HowToPlay = ExtResource( 3 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+volume_db = 10.0
