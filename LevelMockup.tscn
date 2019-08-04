@@ -45,14 +45,14 @@ custom_fonts/font = SubResource( 1 )
 text = "you win"
 align = 1
 
-[node name="PlayAgainButton" type="Button" parent="GUI"]
+[node name="TryAgainButton" type="Button" parent="GUI"]
 visible = false
 margin_left = 553.667
 margin_top = 353.667
 margin_right = 700.667
 margin_bottom = 393.667
 custom_fonts/font = SubResource( 2 )
-text = "Play again"
+text = "try again"
 
 [node name="Boundary" type="TileMap" parent="."]
 visible = false
@@ -85,6 +85,9 @@ position = Vector2( 95.8477, 20.3676 )
 scale = Vector2( 2, 2 )
 [connection signal="hit" from="Player" to="." method="_on_Player_hit"]
 [connection signal="hit" from="Enemy" to="." method="_on_Enemy_hit"]
+[connection signal="hostage_killed" from="Enemy" to="." method="_on_Enemy_hostage_killed"]
 [connection signal="hit" from="Enemy2" to="." method="_on_Enemy_hit"]
+[connection signal="hostage_killed" from="Enemy2" to="." method="_on_Enemy_hostage_killed"]
 [connection signal="hit" from="Enemy3" to="." method="_on_Enemy_hit"]
-[connection signal="pressed" from="GUI/PlayAgainButton" to="GUI" method="_on_PlayAgainButton_pressed"]
+[connection signal="hostage_killed" from="Enemy3" to="." method="_on_Enemy_hostage_killed"]
+[connection signal="pressed" from="GUI/TryAgainButton" to="GUI" method="_on_TryAgainButton_pressed"]

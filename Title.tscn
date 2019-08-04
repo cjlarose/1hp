@@ -48,7 +48,7 @@ margin_top = 367.0
 margin_right = 1190.0
 margin_bottom = 394.0
 custom_fonts/font = SubResource( 3 )
-text = "(but don't get too crazy)"
+text = "(but don't get crazy)"
 align = 1
 
 [node name="HowToPlayLink" type="LinkButton" parent="."]

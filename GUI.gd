@@ -10,13 +10,18 @@ func _ready():
 
 func show_win_game():
 	$MessageLabel.text = 'you win'
-	$MessageLabel.visible = true
-	$PlayAgainButton.show()
+	$MessageLabel.show()
+	$TryAgainButton.show()
 
-func show_try_again():
-	$MessageLabel.text = 'try again?'
-	$MessageLabel.visible = true
-	$PlayAgainButton.show()
+func show_try_again_player_died():
+	$MessageLabel.text = 'you died'
+	$MessageLabel.show()
+	$TryAgainButton.show()
 
-func _on_PlayAgainButton_pressed():
+func show_try_again_hostage_killed():
+	$MessageLabel.text = 'you killed a hostage'
+	$MessageLabel.show()
+	$TryAgainButton.show()
+
+func _on_TryAgainButton_pressed():
 	get_parent().get_parent().title()

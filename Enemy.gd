@@ -13,6 +13,7 @@ var rng = RandomNumberGenerator.new()
 var shooting_timer = Timer.new()
 
 signal hit
+signal hostage_killed
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -33,7 +34,7 @@ func take_damage():
 	match $HealthBar.current_health:
 		0:
 			# TODO: blow up or something
-			get_parent().game_over()
+			emit_signal('hostage_killed')
 			$AnimatedSprite.animation = 'default'
 		1:
 			$AnimatedSprite.animation = '1hp'
