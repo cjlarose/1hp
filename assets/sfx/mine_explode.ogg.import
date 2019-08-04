@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/mine_explode.ogg-129007bdc266a03865f8d6ae68414048.oggstr"
+
+[deps]
+
+source_file="res://assets/sfx/mine_explode.ogg"
+dest_files=[ "res://.import/mine_explode.ogg-129007bdc266a03865f8d6ae68414048.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

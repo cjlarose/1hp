@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/pewpew.ogg-9f56dbdde1dca595797eb017d350ea78.oggstr"
+
+[deps]
+
+source_file="res://assets/sfx/pewpew.ogg"
+dest_files=[ "res://.import/pewpew.ogg-9f56dbdde1dca595797eb017d350ea78.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
