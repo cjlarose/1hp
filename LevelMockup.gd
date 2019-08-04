@@ -19,11 +19,11 @@ func win_game():
 	destroy_player_and_all_enemies()
 
 func game_over():
-	$GUI.show_game_over()
+	$GUI.show_try_again()
 	destroy_player_and_all_enemies()
 
 func destroy_player_and_all_enemies():
-	$Player.queue_free()
+	$Player.freeze()
 	for enemy in get_tree().get_nodes_in_group('enemies'):
 		enemy.queue_free()
 
