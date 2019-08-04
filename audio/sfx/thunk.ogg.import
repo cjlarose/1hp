@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/thunk.ogg-cf21206dc6479ea8e2216e92753b76ec.oggstr"
+
+[deps]
+
+source_file="res://audio/sfx/thunk.ogg"
+dest_files=[ "res://.import/thunk.ogg-cf21206dc6479ea8e2216e92753b76ec.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

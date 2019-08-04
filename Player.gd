@@ -2,6 +2,7 @@ extends Area2D
 
 export (PackedScene) var Projectile
 export (PackedScene) var Aura
+export (PackedScene) var ThunkSoundEffect
 
 export (int) var SPEED = 500
 export (int) var TRACTOR_RANGE = 200
@@ -101,6 +102,7 @@ func _on_Player_body_entered(body):
 	take_damage()
 
 func take_damage():
+	add_child(ThunkSoundEffect.instance())
 	health_bar.update_current_health(health_bar.current_health - 1)
 	emit_signal('hit')
 
