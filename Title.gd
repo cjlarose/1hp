@@ -17,7 +17,7 @@ func _on_StartButton_pressed():
 	start_game()
 
 func start_game():
-	get_tree().change_scene('res://LevelMockup.tscn')
+	get_parent().start_game()
 
 func _on_HowToPlayLink_pressed():
 	get_parent().how_to_play()
