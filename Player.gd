@@ -48,9 +48,10 @@ func handle_movement(delta):
 			$AnimatedSprite.set_animation('default')
 	
 	var target_position = position + motion * MOVE_SPEED * delta
-	if target_position.x > 100 and target_position.x < 1700 and \
-	   target_position.y > 100 and target_position.y < 1100:
-		position = target_position
+	if target_position.x > 100 and target_position.x < 1700:
+		position.x = target_position.x
+	if target_position.y > 100 and target_position.y < 1100:
+		position.y = target_position.y
 
 func handle_shooting():
 	if Input.is_action_just_pressed('ui_accept'):
