@@ -34,6 +34,8 @@ func _process(delta):
 	move_and_collide(dir * delta * SPEED * collision_multiplier)
 
 func take_damage():
+	$AnimatedSprite.set_frame(0)
+	$AnimatedSprite.play()
 	$HealthBar.update_current_health($HealthBar.current_health - 1)
 	match $HealthBar.current_health:
 		0:
@@ -42,6 +44,7 @@ func take_damage():
 			$AnimatedSprite.animation = 'default'
 		1:
 			$AnimatedSprite.animation = '1hp'
+			$CollisionShape2D.set_scale(Vector2(0.9, 0.6))
 		_:
 			$AnimatedSprite.animation = 'default'
 
@@ -67,6 +70,13 @@ func handle_shooting():
 
 	get_parent().add_child(projectile)
 
+func handle_collision_with_player(motion):
+	dir = motion
+	collision_multiplier = motion.length() * 3
+	collision_react_time *= motion.length()
+	collision = true
+	$AnimatedSprite.set_frame(0)
+	$AnimatedSprite.play()
 
 func _on_shooting_timer_timeout():
 	if $HealthBar.current_health != 1:
