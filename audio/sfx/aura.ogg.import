@@ -2,12 +2,12 @@
 
 importer="ogg_vorbis"
 type="AudioStreamOGGVorbis"
-path="res://.import/aura.ogg-4ec014168c29d717c77c844d919d5139.oggstr"
+path="res://.import/aura.ogg-cf316e77a9e26e6b5b7f514ed31a8ddc.oggstr"
 
 [deps]
 
-source_file="res://assets/sfx/aura.ogg"
-dest_files=[ "res://.import/aura.ogg-4ec014168c29d717c77c844d919d5139.oggstr" ]
+source_file="res://audio/sfx/aura.ogg"
+dest_files=[ "res://.import/aura.ogg-cf316e77a9e26e6b5b7f514ed31a8ddc.oggstr" ]
 
 [params]
 

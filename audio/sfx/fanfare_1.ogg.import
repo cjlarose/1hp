@@ -2,12 +2,12 @@
 
 importer="ogg_vorbis"
 type="AudioStreamOGGVorbis"
-path="res://.import/fanfare_1.ogg-84829791d2ce2d0f34a7745c6a0b3a16.oggstr"
+path="res://.import/fanfare_1.ogg-ae73a327ec5b683a90692d1d935eff90.oggstr"
 
 [deps]
 
-source_file="res://assets/sfx/fanfare_1.ogg"
-dest_files=[ "res://.import/fanfare_1.ogg-84829791d2ce2d0f34a7745c6a0b3a16.oggstr" ]
+source_file="res://audio/sfx/fanfare_1.ogg"
+dest_files=[ "res://.import/fanfare_1.ogg-ae73a327ec5b683a90692d1d935eff90.oggstr" ]
 
 [params]
 

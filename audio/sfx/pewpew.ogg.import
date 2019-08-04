@@ -2,12 +2,12 @@
 
 importer="ogg_vorbis"
 type="AudioStreamOGGVorbis"
-path="res://.import/pewpew.ogg-9f56dbdde1dca595797eb017d350ea78.oggstr"
+path="res://.import/pewpew.ogg-f01358efd3a0bf0ad1781dc520ef1228.oggstr"
 
 [deps]
 
-source_file="res://assets/sfx/pewpew.ogg"
-dest_files=[ "res://.import/pewpew.ogg-9f56dbdde1dca595797eb017d350ea78.oggstr" ]
+source_file="res://audio/sfx/pewpew.ogg"
+dest_files=[ "res://.import/pewpew.ogg-f01358efd3a0bf0ad1781dc520ef1228.oggstr" ]
 
 [params]
 
