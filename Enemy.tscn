@@ -44,3 +44,4 @@ __meta__ = {
 }
 
 [node name="HealthBar" parent="." instance=ExtResource( 5 )]
+position = Vector2( -1, -65 )
