@@ -14,6 +14,6 @@ HowToPlay = ExtResource( 3 )
 LevelMockup = ExtResource( 4 )
 Level2 = ExtResource( 5 )
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
-volume_db = 10.0
+volume_db = 5.0

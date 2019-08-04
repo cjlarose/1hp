@@ -10,7 +10,7 @@ var current_level
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$AudioStreamPlayer2D.play()
+	$AudioStreamPlayer.play()
 	current_scene = Title.instance()
 	add_child(current_scene)
 
