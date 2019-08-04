@@ -35,6 +35,8 @@ func destroy_player_and_all_enemies(reason):
 
 	for enemy in get_tree().get_nodes_in_group('enemies'):
 		enemy.queue_free()
+	for mine in get_tree().get_nodes_in_group('mines'):
+		mine.queue_free()
 
 func check_win_condition():
 	if len(get_tree().get_nodes_in_group('enemies')) == 0:
