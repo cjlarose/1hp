@@ -34,6 +34,14 @@ margin_right = 145.0
 margin_bottom = 213.0
 text = "you win"
 
+[node name="PlayAgainButton" type="Button" parent="GUI"]
+visible = false
+margin_left = 88.0
+margin_top = 235.556
+margin_right = 156.0
+margin_bottom = 255.556
+text = "Play again"
+
 [node name="Boundary" type="TileMap" parent="."]
 z_index = -1
 tile_set = ExtResource( 5 )
@@ -60,3 +68,4 @@ collision_layer = 8
 [connection signal="hit" from="Enemy" to="." method="_on_Enemy_hit"]
 [connection signal="hit" from="Enemy2" to="." method="_on_Enemy_hit"]
 [connection signal="hit" from="Enemy3" to="." method="_on_Enemy_hit"]
+[connection signal="pressed" from="GUI/PlayAgainButton" to="GUI" method="_on_PlayAgainButton_pressed"]
