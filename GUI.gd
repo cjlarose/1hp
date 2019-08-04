@@ -11,7 +11,7 @@ func _ready():
 func show_win_game():
 	$MessageLabel.text = 'you win'
 	$MessageLabel.show()
-	$TryAgainButton.show()
+	$NextLevelButton.show()
 
 func show_try_again_player_died():
 	$MessageLabel.text = 'you died'
@@ -25,3 +25,6 @@ func show_try_again_hostage_killed():
 
 func _on_TryAgainButton_pressed():
 	get_parent().get_parent().start_game()
+
+func _on_NextLevelButton_pressed():
+	print('go to next level')

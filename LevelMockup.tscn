@@ -54,6 +54,15 @@ margin_bottom = 393.667
 custom_fonts/font = SubResource( 2 )
 text = "try again"
 
+[node name="NextLevelButton" type="Button" parent="GUI"]
+visible = false
+margin_left = 553.667
+margin_top = 353.667
+margin_right = 700.667
+margin_bottom = 393.667
+custom_fonts/font = SubResource( 2 )
+text = "next level"
+
 [node name="Boundary" type="TileMap" parent="."]
 visible = false
 z_index = -1
@@ -91,3 +100,4 @@ scale = Vector2( 2, 2 )
 [connection signal="hit" from="Enemy3" to="." method="_on_Enemy_hit"]
 [connection signal="hostage_killed" from="Enemy3" to="." method="_on_Enemy_hostage_killed"]
 [connection signal="pressed" from="GUI/TryAgainButton" to="GUI" method="_on_TryAgainButton_pressed"]
+[connection signal="pressed" from="GUI/NextLevelButton" to="GUI" method="_on_NextLevelButton_pressed"]
