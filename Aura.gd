@@ -22,6 +22,7 @@ func _draw():
 	curr_length += 10
 	if (!reached && curr_length > vec.length()):
 		curr_length = vec.length();
+		reached = true
 	elif (reached):
 		curr_length = vec.length();
 	var to = vec.normalized() * curr_length
