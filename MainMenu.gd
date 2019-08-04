@@ -43,6 +43,9 @@ func get_level_scene(level_number):
 		5:
 			return null
 
+func is_on_final_level():
+	return get_level_scene(current_level + 1) == null
+
 func next_level():
 	current_level += 1
 	switch_to_scene(get_level_scene(current_level))

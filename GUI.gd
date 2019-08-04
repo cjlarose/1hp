@@ -9,9 +9,12 @@ func _ready():
 #	pass
 
 func show_win_game():
-	$MessageLabel.text = 'you win'
+	if get_parent().get_parent().is_on_final_level():
+		$MessageLabel.text = 'victory!'
+	else:
+		$MessageLabel.text = 'excellent! more hostages await rescue'
+		$NextLevelButton.show()
 	$MessageLabel.show()
-	$NextLevelButton.show()
 
 func show_try_again_player_died():
 	$MessageLabel.text = 'you died'
