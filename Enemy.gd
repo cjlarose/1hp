@@ -34,7 +34,7 @@ func _process(delta):
 	move_and_collide(dir * delta * SPEED * collision_multiplier)
 
 func take_damage():
-	$AnimatedSprite.set_frame(0)
+	$AnimatedSprite.set_frame(1)
 	$AnimatedSprite.play()
 	$HealthBar.update_current_health($HealthBar.current_health - 1)
 	match $HealthBar.current_health:
