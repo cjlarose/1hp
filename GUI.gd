@@ -13,8 +13,13 @@ func show_win_game():
 	$MessageLabel.show()
 	$TryAgainButton.show()
 
-func show_try_again():
-	$MessageLabel.text = 'you lost'
+func show_try_again_player_died():
+	$MessageLabel.text = 'you died'
+	$MessageLabel.show()
+	$TryAgainButton.show()
+
+func show_try_again_hostage_killed():
+	$MessageLabel.text = 'you killed a hostage'
 	$MessageLabel.show()
 	$TryAgainButton.show()
 
