@@ -2,6 +2,7 @@ extends Node2D
 
 export (PackedScene) var Title
 export (PackedScene) var HowToPlay
+export (PackedScene) var Level1
 export (PackedScene) var LevelMockup
 export (PackedScene) var Level2
 
@@ -26,20 +27,24 @@ func title():
 
 func start_game():
 	current_level = 1
-	switch_to_scene(LevelMockup)
+	switch_to_scene(get_current_level())
 
 func get_current_level():
 	match current_level:
 		1:
-			return LevelMockup
+			return Level1
 		2:
+			return LevelMockup
+		3:
 			return Level2
 
 func get_next_level():
 	match current_level:
 		1:
-			return Level2
+			return LevelMockup
 		2:
+			return Level2
+		3:
 			return null
 
 func next_level():
