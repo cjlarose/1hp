@@ -28,6 +28,7 @@ func game_over(reason):
 
 func destroy_player_and_all_enemies(reason):
 	if reason == GAME_END_REASON.PLAYER_DIED:
+		$Player.currently_rescuing = null
 		$Player.explode()
 	else:
 		$Player.freeze()
