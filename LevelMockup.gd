@@ -1,7 +1,7 @@
 extends Node2D
 
 enum { WIN, LOSE, CONTINUE }
-enum GAME_END_REASON { PLAYER_DIED, HOSTAGE_KILLED }
+enum GAME_END_REASON { PLAYER_DIED, HOSTAGE_KILLED, WON }
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,17 +17,21 @@ func _on_Player_hit():
 
 func win_game():
 	$GUI.show_win_game()
-	destroy_player_and_all_enemies()
+	destroy_player_and_all_enemies(GAME_END_REASON.WON)
 
 func game_over(reason):
 	if reason == GAME_END_REASON.PLAYER_DIED:
 		$GUI.show_try_again_player_died()
 	else:
 		$GUI.show_try_again_hostage_killed()
-	destroy_player_and_all_enemies()
+	destroy_player_and_all_enemies(reason)
 
-func destroy_player_and_all_enemies():
-	$Player.freeze()
+func destroy_player_and_all_enemies(reason):
+	if reason == GAME_END_REASON.PLAYER_DIED:
+		$Player.explode()
+	else:
+		$Player.freeze()
+
 	for enemy in get_tree().get_nodes_in_group('enemies'):
 		enemy.queue_free()
 

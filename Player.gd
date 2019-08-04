@@ -115,6 +115,12 @@ func unfreeze():
 	show()
 	frozen = false
 
+func explode():
+	$AnimatedSprite.animation = 'exploding'
+	$AnimatedSprite.play()
+	yield($AnimatedSprite, 'animation_finished')
+	freeze()
+
 func _on_RescueTimer_timeout():
 	add_child(FanfareSoundEffect.instance())
 	if currently_rescuing:
