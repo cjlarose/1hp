@@ -5,6 +5,7 @@ export (PackedScene) var HowToPlay
 export (PackedScene) var Level1
 export (PackedScene) var LevelMockup
 export (PackedScene) var Level2
+export (PackedScene) var SpellyLevel
 
 var current_scene
 var current_level
@@ -38,6 +39,8 @@ func get_level_scene(level_number):
 		3:
 			return Level2
 		4:
+			return SpellyLevel
+		5:
 			return null
 
 func next_level():
