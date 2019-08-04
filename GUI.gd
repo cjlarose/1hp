@@ -27,4 +27,4 @@ func _on_TryAgainButton_pressed():
 	get_parent().get_parent().start_game()
 
 func _on_NextLevelButton_pressed():
-	print('go to next level')
+	get_parent().get_parent().next_level()

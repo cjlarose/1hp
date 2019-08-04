@@ -3,8 +3,10 @@ extends Node2D
 export (PackedScene) var Title
 export (PackedScene) var HowToPlay
 export (PackedScene) var LevelMockup
+export (PackedScene) var Level2
 
 var current_scene
+var current_level
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -23,7 +25,20 @@ func title():
 	switch_to_scene(Title)
 
 func start_game():
+	current_level = 1
 	switch_to_scene(LevelMockup)
+
+func get_next_level():
+	match current_level:
+		1:
+			return Level2
+		2:
+			return null
+
+func next_level():
+	var next_level_scene = get_next_level()
+	current_level += 1
+	switch_to_scene(next_level_scene)
 
 func switch_to_scene(scene_type):
 	current_scene.queue_free()

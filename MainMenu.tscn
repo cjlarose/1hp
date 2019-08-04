@@ -1,17 +1,19 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://MainMenu.gd" type="Script" id=1]
 [ext_resource path="res://Title.tscn" type="PackedScene" id=2]
 [ext_resource path="res://HowToPlay.tscn" type="PackedScene" id=3]
 [ext_resource path="res://LevelMockup.tscn" type="PackedScene" id=4]
-[ext_resource path="res://audio/title_screen_level_1.ogg" type="AudioStream" id=5]
+[ext_resource path="res://Level2.tscn" type="PackedScene" id=5]
+[ext_resource path="res://audio/title_screen_level_1.ogg" type="AudioStream" id=6]
 
 [node name="MainMenu" type="Node2D"]
 script = ExtResource( 1 )
 Title = ExtResource( 2 )
 HowToPlay = ExtResource( 3 )
 LevelMockup = ExtResource( 4 )
+Level2 = ExtResource( 5 )
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 5 )
+stream = ExtResource( 6 )
 volume_db = 10.0
