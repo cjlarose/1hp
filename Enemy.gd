@@ -56,11 +56,11 @@ func set_dir(target_dir):
 	next_dir = target_dir
 	var current_time = OS.get_ticks_msec()
 	if (!collision && current_time - prev_dir_time > react_time):
-       dir = next_dir
-       prev_dir_time = current_time
+		dir = next_dir
+		prev_dir_time = current_time
 	if (collision && current_time - prev_dir_time > collision_react_time):
 		dir = next_dir
-		prev_dir_time - current_time
+		prev_dir_time = current_time
 		collision = false
 		collision_multiplier = 1
 		collision_react_time = 1500
