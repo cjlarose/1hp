@@ -11,6 +11,7 @@ const TURN_SPEED = 180
 const MOVE_SPEED = 220
 const ACC = 0.1
 const DEC = 0.0075
+const COLLISION_BOUNCE = 0.7
 
 var motion = Vector2(0,0)
 
@@ -102,6 +103,13 @@ func _on_Player_body_entered(body):
 
 	take_damage()
 
+	if 'enemies' in body.get_groups():
+		body.dir = motion
+		body.collision_multiplier = motion.length() * 3
+		body.collision_react_time *= motion.length()
+		body.collision = true
+		motion = -motion * COLLISION_BOUNCE
+	
 func take_damage():
 	add_child(ThunkSoundEffect.instance())
 	health_bar.update_current_health(health_bar.current_health - 1)

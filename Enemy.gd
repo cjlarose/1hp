@@ -12,6 +12,10 @@ var prev_dir_time = 0
 var rng = RandomNumberGenerator.new()
 var shooting_timer = Timer.new()
 
+var collision_react_time = 1500
+var collision = false
+var collision_multiplier = 1
+
 signal hit
 signal hostage_killed
 
@@ -27,7 +31,7 @@ func _process(delta):
 	var direction_to_player = (player.position - position).normalized()
 	set_dir(direction_to_player)
 
-	move_and_collide(dir * delta * SPEED)
+	move_and_collide(dir * delta * SPEED * collision_multiplier)
 
 func take_damage():
 	$HealthBar.update_current_health($HealthBar.current_health - 1)
@@ -46,9 +50,15 @@ func take_damage():
 func set_dir(target_dir):
 	next_dir = target_dir
 	var current_time = OS.get_ticks_msec()
-	if current_time - prev_dir_time > react_time:
+	if (!collision && current_time - prev_dir_time > react_time):
        dir = next_dir
        prev_dir_time = current_time
+	if (collision && current_time - prev_dir_time > collision_react_time):
+		dir = next_dir
+		prev_dir_time - current_time
+		collision = false
+		collision_multiplier = 1
+		collision_react_time = 1500
 
 func handle_shooting():
 	var projectile = EnemyProjectile.instance()
