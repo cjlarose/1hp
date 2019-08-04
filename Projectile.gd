@@ -1,6 +1,6 @@
 extends Area2D
 
-export (int) var SPEED = 20
+export (int) var SPEED = 1500
 export (PackedScene) var PewPewSoundEffect
 
 var direction
@@ -12,7 +12,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	position += direction * SPEED
+	position += direction * SPEED * delta
 
 func _on_Projectile_body_entered(enemy):
 	if 'enemies' in enemy.get_groups():

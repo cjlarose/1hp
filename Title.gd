@@ -9,7 +9,7 @@ func _ready():
 	OS.set_window_position(Vector2(0,0))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_pressed('ui_accept'):
 		start_game()
 

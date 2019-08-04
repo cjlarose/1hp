@@ -5,7 +5,6 @@ export (PackedScene) var Aura
 export (PackedScene) var ThunkSoundEffect
 export (PackedScene) var FanfareSoundEffect
 
-export (int) var SPEED = 500
 export (int) var TRACTOR_RANGE = 200
 const TURN_SPEED = 180
 const MOVE_SPEED = 220
@@ -18,7 +17,6 @@ var motion = Vector2(0,0)
 signal hit
 
 var face_direction
-var velocity
 var currently_rescuing
 var health_bar
 var frozen
