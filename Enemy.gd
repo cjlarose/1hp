@@ -2,6 +2,10 @@ extends KinematicBody2D
 
 export (int) var SPEED = 25
 export (int)  var react_time = 200
+<<<<<<< HEAD
+=======
+export (int) var shooting_delay = 5
+>>>>>>> Adding Level2
 export (PackedScene) var EnemyProjectile
 
 onready var player = get_parent().get_node('Player')
@@ -25,7 +29,7 @@ func _ready():
 	rng.randomize()
 	shooting_timer.connect("timeout",self,"_on_shooting_timer_timeout")
 	add_child(shooting_timer)
-	shooting_timer.start(rng.randf_range(2,5))
+	shooting_timer.start(rng.randf_range(2, shooting_delay))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -83,4 +87,4 @@ func handle_collision_with_player(motion):
 func _on_shooting_timer_timeout():
 	if $HealthBar.current_health != 1:
 		handle_shooting()
-		shooting_timer.start(rng.randf_range(2,5))
+		shooting_timer.start(rng.randf_range(2,shooting_delay))
