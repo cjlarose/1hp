@@ -28,6 +28,13 @@ func start_game():
 	current_level = 1
 	switch_to_scene(LevelMockup)
 
+func get_current_level():
+	match current_level:
+		1:
+			return LevelMockup
+		2:
+			return Level2
+
 func get_next_level():
 	match current_level:
 		1:
@@ -39,6 +46,9 @@ func next_level():
 	var next_level_scene = get_next_level()
 	current_level += 1
 	switch_to_scene(next_level_scene)
+
+func replay_level():
+	switch_to_scene(get_current_level())
 
 func switch_to_scene(scene_type):
 	current_scene.queue_free()
