@@ -14,7 +14,7 @@ func show_win_game():
 	$TryAgainButton.show()
 
 func show_try_again():
-	$MessageLabel.text = 'try again?'
+	$MessageLabel.text = 'you lost'
 	$MessageLabel.show()
 	$TryAgainButton.show()
 

@@ -52,7 +52,7 @@ margin_top = 353.667
 margin_right = 700.667
 margin_bottom = 393.667
 custom_fonts/font = SubResource( 2 )
-text = "Play again"
+text = "try again"
 
 [node name="Boundary" type="TileMap" parent="."]
 visible = false
