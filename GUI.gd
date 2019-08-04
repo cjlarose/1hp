@@ -19,4 +19,4 @@ func show_game_over():
 	$PlayAgainButton.show()
 
 func _on_PlayAgainButton_pressed():
-	get_tree().change_scene('res://Title.tscn')
+	get_parent().get_parent().title()
