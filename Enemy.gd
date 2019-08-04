@@ -58,6 +58,6 @@ func handle_shooting():
 
 
 func _on_shooting_timer_timeout():
-	handle_shooting()
 	if $HealthBar.current_health != 1:
+		handle_shooting()
 		shooting_timer.start(rng.randf_range(2,5))
