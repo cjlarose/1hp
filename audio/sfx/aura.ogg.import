@@ -11,5 +11,5 @@ dest_files=[ "res://.import/aura.ogg-cf316e77a9e26e6b5b7f514ed31a8ddc.oggstr" ]
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
