@@ -9,7 +9,6 @@ onready var player = get_parent().get_node('Player')
 var next_dir = Vector2(0,0)
 var dir = Vector2(0,0)
 var prev_dir_time = 0
-var prev_shooting_time = 0
 var rng = RandomNumberGenerator.new()
 var shooting_timer = Timer.new()
 
