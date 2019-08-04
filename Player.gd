@@ -16,13 +16,15 @@ signal hit
 var face_direction
 var velocity
 var currently_rescuing
+var health_bar
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	randomize()
 	face_direction = Vector2(0, 1)
-	$HealthBar.max_health = 4
-	$HealthBar.current_health = 4
+	health_bar = get_parent().get_node('CanvasLayer/PlayerHealthBar')
+	health_bar.max_health = 4
+	health_bar.current_health = 4
 	currently_rescuing = null
 
 func _process(delta):
@@ -90,7 +92,7 @@ func _on_Player_body_entered(body):
 	take_damage()
 
 func take_damage():
-	$HealthBar.update_current_health($HealthBar.current_health - 1)
+	health_bar.update_current_health(health_bar.current_health - 1)
 	emit_signal('hit')
 
 func _on_RescueTimer_timeout():

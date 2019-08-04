@@ -11,7 +11,7 @@ func _ready():
 #	pass
 
 func _on_Player_hit():
-	if $Player/HealthBar.current_health == 0:
+	if $CanvasLayer/PlayerHealthBar.current_health == 0:
 		game_over()
 
 func win_game():
