@@ -104,8 +104,13 @@ func _on_Player_body_entered(body):
 	take_damage()
 
 	if 'enemies' in body.get_groups():
+		var dir = body.dir
 		body.handle_collision_with_player(motion)
-		motion = -motion * COLLISION_BOUNCE
+
+		if motion.length() < 0.25:
+			motion = dir * (body.SPEED * body.last_delta)
+		else :
+			motion = -motion * COLLISION_BOUNCE
 	
 func take_damage():
 	add_child(ThunkSoundEffect.instance())

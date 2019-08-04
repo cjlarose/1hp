@@ -16,6 +16,8 @@ var collision_react_time = 1500
 var collision = false
 var collision_multiplier = 1
 
+var last_delta
+
 signal hit
 signal hostage_killed
 
@@ -28,6 +30,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	last_delta = delta
 	var direction_to_player = (player.position - position).normalized()
 	set_dir(direction_to_player)
 
