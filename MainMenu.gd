@@ -7,6 +7,8 @@ export (PackedScene) var LevelMockup
 export (PackedScene) var Level2
 export (PackedScene) var SpellyLevel
 export (PackedScene) var PoopLevel
+export (PackedScene) var LevelMine
+
 
 var current_scene
 var current_level
@@ -44,6 +46,8 @@ func get_level_scene(level_number):
 		5:
 			return PoopLevel
 		6:
+			return LevelMine
+		7:
 			return null
 
 func is_on_final_level():
