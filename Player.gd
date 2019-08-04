@@ -5,7 +5,7 @@ export (PackedScene) var Aura
 export (PackedScene) var ThunkSoundEffect
 export (PackedScene) var FanfareSoundEffect
 
-export (int) var TRACTOR_RANGE = 200
+export (int) var TRACTOR_RANGE = 250
 const TURN_SPEED = 180
 const MOVE_SPEED = 220
 const ACC = 0.1
