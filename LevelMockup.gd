@@ -23,7 +23,7 @@ func game_over():
 	destroy_player_and_all_enemies()
 
 func destroy_player_and_all_enemies():
-	$Player.hide()
+	$Player.freeze()
 	for enemy in get_tree().get_nodes_in_group('enemies'):
 		enemy.queue_free()
 

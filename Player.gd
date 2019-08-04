@@ -18,6 +18,7 @@ var face_direction
 var velocity
 var currently_rescuing
 var health_bar
+var frozen
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -27,11 +28,13 @@ func _ready():
 	health_bar.max_health = 4
 	health_bar.current_health = 4
 	currently_rescuing = null
+	frozen = false
 
 func _process(delta):
-	handle_movement(delta)
-	handle_shooting()
-	handle_rescuing()
+	if frozen == false:
+		handle_movement(delta)
+		handle_shooting()
+		handle_rescuing()
 
 func handle_movement(delta):
 	if Input.is_action_pressed("ui_left"):
@@ -100,6 +103,14 @@ func _on_Player_body_entered(body):
 func take_damage():
 	health_bar.update_current_health(health_bar.current_health - 1)
 	emit_signal('hit')
+
+func freeze():
+	hide()
+	frozen = true
+
+func unfreeze():
+	show()
+	frozen = false
 
 func _on_RescueTimer_timeout():
 	if currently_rescuing:
