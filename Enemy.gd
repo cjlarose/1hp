@@ -78,7 +78,7 @@ func handle_collision_with_player(motion):
 	collision_multiplier = motion.length() * 3
 	collision_react_time *= motion.length()
 	collision = true
-	$AnimatedSprite.set_frame(0)
+	$AnimatedSprite.set_frame(1)
 	$AnimatedSprite.play()
 
 func _on_shooting_timer_timeout():
