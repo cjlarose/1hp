@@ -1,23 +1,24 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Mine.gd" type="Script" id=1]
-[ext_resource path="res://assets/mine/mine_00.png" type="Texture" id=2]
-[ext_resource path="res://assets/mine/mine_explode_00.png" type="Texture" id=3]
-[ext_resource path="res://assets/mine/mine_explode_01.png" type="Texture" id=4]
-[ext_resource path="res://assets/mine/mine_explode_02.png" type="Texture" id=5]
-[ext_resource path="res://assets/mine/mine_explode_03.png" type="Texture" id=6]
-[ext_resource path="res://assets/mine/mine_explode_04.png" type="Texture" id=7]
-[ext_resource path="res://assets/mine/mine_explode_05.png" type="Texture" id=8]
-[ext_resource path="res://assets/mine/mine_explode_06.png" type="Texture" id=9]
+[ext_resource path="res://audio/sfx/MineExplodeSoundEffect.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/mine/mine_00.png" type="Texture" id=3]
+[ext_resource path="res://assets/mine/mine_explode_00.png" type="Texture" id=4]
+[ext_resource path="res://assets/mine/mine_explode_01.png" type="Texture" id=5]
+[ext_resource path="res://assets/mine/mine_explode_02.png" type="Texture" id=6]
+[ext_resource path="res://assets/mine/mine_explode_03.png" type="Texture" id=7]
+[ext_resource path="res://assets/mine/mine_explode_04.png" type="Texture" id=8]
+[ext_resource path="res://assets/mine/mine_explode_05.png" type="Texture" id=9]
+[ext_resource path="res://assets/mine/mine_explode_06.png" type="Texture" id=10]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"frames": [ ExtResource( 3 ), ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
 "loop": false,
 "name": "exploding",
 "speed": 12.0
 }, {
-"frames": [ ExtResource( 2 ) ],
+"frames": [ ExtResource( 3 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -27,6 +28,7 @@ animations = [ {
 "mines",
 ]]
 script = ExtResource( 1 )
+MineExplodeSoundEffect = ExtResource( 2 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PoolVector2Array( -10.5625, -27.4968, 2.17348, -16.417, 23.1336, -27.611, 17.9935, -5.05173, 29.5873, 8.31249, 11.8254, 7.96981, 11.3685, 27.6735, -2.62393, 13.167, -23.0129, 27.0452, -16.2737, 4.65732, -30.3233, -9.04958, -11.4763, -9.44936 )

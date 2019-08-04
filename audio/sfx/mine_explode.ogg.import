@@ -11,5 +11,5 @@ dest_files=[ "res://.import/mine_explode.ogg-3f19637618ecff5b64a7380f4c4334cf.og
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
