@@ -16,6 +16,9 @@ var collision_react_time = 1500
 var collision = false
 var collision_multiplier = 1
 
+var shield_visible_timer = 0
+const SHIELD_VISIBLE_TIME = 100
+
 var last_delta
 
 signal hit
@@ -34,7 +37,18 @@ func _process(delta):
 	var direction_to_player = (player.position - position).normalized()
 	set_dir(direction_to_player)
 
-	move_and_collide(dir * delta * SPEED * collision_multiplier)
+	var col = move_and_collide(dir * delta * SPEED * collision_multiplier)
+
+	if shield_visible_timer > -1:
+		shield_visible_timer -= 1
+
+	if col && col.collider:
+		dir = dir.slide(col.normal).normalized()
+		if $AnimatedSprite.animation == 'default' && !$AnimatedSprite.playing:
+			$AnimatedSprite.set_frame(1)
+			shield_visible_timer = SHIELD_VISIBLE_TIME
+	elif !$AnimatedSprite.playing && shield_visible_timer == 0:
+		$AnimatedSprite.set_frame(0)
 
 func take_damage():
 	$AnimatedSprite.set_frame(1)
@@ -47,7 +61,7 @@ func take_damage():
 			$AnimatedSprite.animation = 'default'
 		1:
 			$AnimatedSprite.animation = '1hp'
-			$CollisionShape2D.set_scale(Vector2(0.9, 0.5))
+			$CollisionShape2D.set_scale(Vector2(0.5, 0.5))
 		_:
 			$AnimatedSprite.animation = 'default'
 
@@ -61,7 +75,9 @@ func set_dir(target_dir):
 		prev_dir_time = current_time
 	if (collision && current_time - prev_dir_time > collision_react_time):
 		dir = next_dir
+
 		prev_dir_time = current_time
+
 		collision = false
 		collision_multiplier = 1
 		collision_react_time = 1500
@@ -84,4 +100,9 @@ func handle_collision_with_player(motion):
 func _on_shooting_timer_timeout():
 	if $HealthBar.current_health != 1:
 		handle_shooting()
+
 		shooting_timer.start(rng.randf_range(2,shooting_upper_bound))
+
+func _on_AnimatedSprite_animation_finished():
+	$AnimatedSprite.set_frame(0)
+	$AnimatedSprite.stop()
