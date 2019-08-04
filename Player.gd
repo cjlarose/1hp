@@ -49,10 +49,12 @@ func handle_movement(delta):
 		motion = motion.linear_interpolate(face_direction, ACC)
 		if $AnimatedSprite.animation == 'default':
 			$AnimatedSprite.play('Thrust')
+			$ThrusterSoundEffect.play()
 	else:
 		motion = motion.linear_interpolate(Vector2(0,0), DEC)
 		if $AnimatedSprite.animation == 'Thrust':
 			$AnimatedSprite.set_animation('default')
+			$ThrusterSoundEffect.stop()
 	
 	var target_position = position + motion * MOVE_SPEED * delta
 	if target_position.x > 100 and target_position.x < 1700:
@@ -118,6 +120,7 @@ func take_damage():
 func freeze():
 	hide()
 	frozen = true
+	$ThrusterSoundEffect.stop()
 
 func unfreeze():
 	show()
