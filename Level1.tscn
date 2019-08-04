@@ -23,7 +23,7 @@ script = ExtResource( 1 )
 collision_mask = 6
 
 [node name="Enemy" parent="." instance=ExtResource( 3 )]
-position = Vector2( 168.985, 170.438 )
+position = Vector2( 827.247, 408.481 )
 
 [node name="GUI" type="CanvasLayer" parent="."]
 script = ExtResource( 4 )
@@ -83,7 +83,7 @@ position = Vector2( 121.282, 43.7398 )
 scale = Vector2( 2, 2 )
 
 [node name="StartPosition" type="Position2D" parent="."]
-position = Vector2( 539, 291 )
+position = Vector2( 269.38, 278.855 )
 [connection signal="hit" from="Player" to="." method="_on_Player_hit"]
 [connection signal="hit" from="Enemy" to="." method="_on_Enemy_hit"]
 [connection signal="hostage_killed" from="Enemy" to="." method="_on_Enemy_hostage_killed"]

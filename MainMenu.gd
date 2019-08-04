@@ -40,11 +40,11 @@ func get_level_scene(level_number):
 		2:
 			return LevelMockup
 		3:
-			return Level2
-		4:
 			return SpellyLevel
-		5:
+		4:
 			return PoopLevel
+		5:
+			return Level2
 		6:
 			return LevelMine
 		7:

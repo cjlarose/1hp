@@ -24,16 +24,16 @@ script = ExtResource( 1 )
 collision_mask = 6
 
 [node name="Enemy" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1041, 117 )
+position = Vector2( 925.022, 128.895 )
 
 [node name="Enemy2" parent="." instance=ExtResource( 3 )]
-position = Vector2( 115, 497 )
+position = Vector2( 189.345, 482.131 )
 
 [node name="Enemy3" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1567.19, 162.947 )
+position = Vector2( 1629.64, 558.463 )
 
 [node name="Enemy4" parent="." instance=ExtResource( 3 )]
-position = Vector2( 377.667, 980.742 )
+position = Vector2( 850.501, 1019.4 )
 
 [node name="GUI" type="CanvasLayer" parent="."]
 script = ExtResource( 4 )
@@ -98,6 +98,14 @@ collision_layer = 8
 position = Vector2( 1393.55, 886.885 )
 collision_layer = 8
 
+[node name="Mine4" parent="." instance=ExtResource( 8 )]
+position = Vector2( 218.899, 824.435 )
+collision_layer = 8
+
+[node name="Mine5" parent="." instance=ExtResource( 8 )]
+position = Vector2( 1343, 327.81 )
+collision_layer = 8
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="PlayerHealthBar" parent="CanvasLayer" instance=ExtResource( 9 )]
@@ -105,7 +113,7 @@ position = Vector2( 121.282, 43.7398 )
 scale = Vector2( 2, 2 )
 
 [node name="StartPosition" type="Position2D" parent="."]
-position = Vector2( 539, 291 )
+position = Vector2( 684.716, 439.69 )
 [connection signal="hit" from="Player" to="." method="_on_Player_hit"]
 [connection signal="hit" from="Enemy" to="." method="_on_Enemy_hit"]
 [connection signal="hostage_killed" from="Enemy" to="." method="_on_Enemy_hostage_killed"]
