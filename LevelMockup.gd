@@ -35,3 +35,6 @@ func check_win_condition():
 
 func _on_Enemy_hit():
 	pass
+
+func _on_Enemy_hostage_killed():
+	game_over()
