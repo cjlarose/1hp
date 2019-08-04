@@ -43,6 +43,8 @@ func _process(delta):
 		shield_visible_timer -= 1
 
 	if col && col.collider:
+		if 'mines' in col.collider.get_groups() && col.collider.detonated:
+			take_damage();
 		dir = dir.slide(col.normal).normalized()
 		if $AnimatedSprite.animation == 'default' && !$AnimatedSprite.playing:
 			$AnimatedSprite.set_frame(1)
