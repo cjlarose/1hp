@@ -16,6 +16,7 @@ animations = [ {
 radius = 227.858
 
 [node name="Aura" type="Area2D"]
+z_index = -1
 script = ExtResource( 1 )
 AuraSoundEffect = ExtResource( 2 )
 
