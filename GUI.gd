@@ -13,8 +13,8 @@ func show_win_game():
 	$MessageLabel.visible = true
 	$PlayAgainButton.show()
 
-func show_game_over():
-	$MessageLabel.text = 'you lose'
+func show_try_again():
+	$MessageLabel.text = 'try again?'
 	$MessageLabel.visible = true
 	$PlayAgainButton.show()
 

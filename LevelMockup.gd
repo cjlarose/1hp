@@ -19,7 +19,7 @@ func win_game():
 	destroy_player_and_all_enemies()
 
 func game_over():
-	$GUI.show_game_over()
+	$GUI.show_try_again()
 	destroy_player_and_all_enemies()
 
 func destroy_player_and_all_enemies():
