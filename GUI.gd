@@ -11,12 +11,12 @@ func _ready():
 func show_win_game():
 	$MessageLabel.text = 'you win'
 	$MessageLabel.show()
-	$PlayAgainButton.show()
+	$TryAgainButton.show()
 
 func show_try_again():
 	$MessageLabel.text = 'try again?'
 	$MessageLabel.show()
-	$PlayAgainButton.show()
+	$TryAgainButton.show()
 
-func _on_PlayAgainButton_pressed():
+func _on_TryAgainButton_pressed():
 	get_parent().get_parent().title()
