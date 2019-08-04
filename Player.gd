@@ -107,7 +107,7 @@ func _on_Player_body_entered(body):
 		var dir = body.dir
 		body.handle_collision_with_player(motion)
 
-		if motion.length() < 0.25:
+		if motion.length() < (body.SPEED * body.last_delta):
 			motion = dir * (body.SPEED * body.last_delta)
 		else :
 			motion = -motion * COLLISION_BOUNCE
