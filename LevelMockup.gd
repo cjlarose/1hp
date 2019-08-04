@@ -5,7 +5,7 @@ enum GAME_END_REASON { PLAYER_DIED, HOSTAGE_KILLED, WON }
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Player.position = $Player/StartPosition.position
+	$Player.position = $StartPosition.position
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

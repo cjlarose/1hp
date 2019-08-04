@@ -81,6 +81,9 @@ tile_data = PoolIntArray( -131077, -536870912, 0, -131076, -1073741821, 0, -1310
 [node name="PlayerHealthBar" parent="CanvasLayer" instance=ExtResource( 8 )]
 position = Vector2( 121.282, 43.7398 )
 scale = Vector2( 2, 2 )
+
+[node name="StartPosition" type="Position2D" parent="."]
+position = Vector2( 539, 291 )
 [connection signal="hit" from="Player" to="." method="_on_Player_hit"]
 [connection signal="hit" from="Enemy" to="." method="_on_Enemy_hit"]
 [connection signal="hostage_killed" from="Enemy" to="." method="_on_Enemy_hostage_killed"]
