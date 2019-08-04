@@ -24,4 +24,4 @@ func show_try_again_hostage_killed():
 	$TryAgainButton.show()
 
 func _on_TryAgainButton_pressed():
-	get_parent().get_parent().title()
+	get_parent().get_parent().start_game()
