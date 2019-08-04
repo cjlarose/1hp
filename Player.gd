@@ -104,10 +104,7 @@ func _on_Player_body_entered(body):
 	take_damage()
 
 	if 'enemies' in body.get_groups():
-		body.dir = motion
-		body.collision_multiplier = motion.length() * 3
-		body.collision_react_time *= motion.length()
-		body.collision = true
+		body.handle_collision_with_player(motion)
 		motion = -motion * COLLISION_BOUNCE
 	
 func take_damage():
