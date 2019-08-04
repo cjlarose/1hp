@@ -55,6 +55,7 @@ custom_fonts/font = SubResource( 2 )
 text = "Play again"
 
 [node name="Boundary" type="TileMap" parent="."]
+visible = false
 z_index = -1
 tile_set = ExtResource( 6 )
 cell_size = Vector2( 50, 50 )
