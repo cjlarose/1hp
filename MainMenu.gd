@@ -27,33 +27,25 @@ func title():
 
 func start_game():
 	current_level = 1
-	switch_to_scene(get_current_level())
+	switch_to_scene(get_level_scene(current_level))
 
-func get_current_level():
-	match current_level:
+func get_level_scene(level_number):
+	match level_number:
 		1:
 			return Level1
 		2:
 			return LevelMockup
 		3:
 			return Level2
-
-func get_next_level():
-	match current_level:
-		1:
-			return LevelMockup
-		2:
-			return Level2
-		3:
+		4:
 			return null
 
 func next_level():
-	var next_level_scene = get_next_level()
 	current_level += 1
-	switch_to_scene(next_level_scene)
+	switch_to_scene(get_level_scene(current_level))
 
 func replay_level():
-	switch_to_scene(get_current_level())
+	switch_to_scene(get_level_scene(current_level))
 
 func switch_to_scene(scene_type):
 	current_scene.queue_free()
