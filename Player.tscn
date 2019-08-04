@@ -1,24 +1,33 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://Projectile.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Aura.tscn" type="PackedScene" id=3]
 [ext_resource path="res://audio/sfx/ThunkSoundEffect.tscn" type="PackedScene" id=4]
 [ext_resource path="res://audio/sfx/FanfareSoundEffect.tscn" type="PackedScene" id=5]
-[ext_resource path="res://assets/Player/20190803_162314.png" type="Texture" id=6]
-[ext_resource path="res://assets/Player/sketch1564865564137.png" type="Texture" id=7]
-[ext_resource path="res://assets/Player/sketch1564865766390.png" type="Texture" id=8]
-[ext_resource path="res://assets/Player/sketch1564865851491.png" type="Texture" id=9]
-[ext_resource path="res://assets/Player/sketch1564867457772.png" type="Texture" id=10]
+[ext_resource path="res://assets/player death/ship explosion 1.png" type="Texture" id=6]
+[ext_resource path="res://assets/player death/ship explosion 2.png" type="Texture" id=7]
+[ext_resource path="res://assets/player death/ship explosion 3.png" type="Texture" id=8]
+[ext_resource path="res://assets/player death/ship explosion 4.png" type="Texture" id=9]
+[ext_resource path="res://assets/Player/20190803_162314.png" type="Texture" id=10]
+[ext_resource path="res://assets/Player/sketch1564865564137.png" type="Texture" id=11]
+[ext_resource path="res://assets/Player/sketch1564865766390.png" type="Texture" id=12]
+[ext_resource path="res://assets/Player/sketch1564865851491.png" type="Texture" id=13]
+[ext_resource path="res://assets/Player/sketch1564867457772.png" type="Texture" id=14]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
+"loop": false,
+"name": "exploding",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ) ],
 "loop": true,
 "name": "Thrust",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 10 ) ],
+"frames": [ ExtResource( 14 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
