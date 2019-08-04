@@ -2,8 +2,8 @@
 
 [ext_resource path="res://Enemy.gd" type="Script" id=1]
 [ext_resource path="res://EnemyProjectile.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/enemy_ship/sketch1564864862492.png" type="Texture" id=3]
-[ext_resource path="res://assets/enemy_ship/sketch1564864862492-green.png" type="Texture" id=4]
+[ext_resource path="res://assets/enemy_ship/sketch1564864862492-green.png" type="Texture" id=3]
+[ext_resource path="res://assets/enemy_ship/sketch1564864862492.png" type="Texture" id=4]
 [ext_resource path="res://HealthBar.tscn" type="PackedScene" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -13,12 +13,12 @@ extents = Vector2( 50, 50 )
 animations = [ {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
-"name": "default",
+"name": "1hp",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 4 ) ],
 "loop": true,
-"name": "1hp",
+"name": "default",
 "speed": 5.0
 } ]
 

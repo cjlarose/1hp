@@ -1,6 +1,7 @@
 extends Area2D
 
 export (PackedScene) var Projectile
+export (PackedScene) var Aura
 
 export (int) var SPEED = 500
 export (int) var TRACTOR_RANGE = 200
@@ -68,16 +69,21 @@ func handle_rescuing():
 		if enemy and enemy.get_node('HealthBar').current_health == 1:
 			currently_rescuing = enemy
 			$RescueTimer.start()
+			var aura = Aura.instance()
+			add_child(aura)
 	elif Input.is_action_pressed('rescue'):
 		if currently_rescuing:
 			# Player/Enemy moved out of range
 			if position.distance_to(currently_rescuing.position) > TRACTOR_RANGE:
-				currently_rescuing = null
-				$RescueTimer.stop()
+				stop_aura()
 	elif currently_rescuing:
 		# No longer pressing Shift
-		currently_rescuing = null
-		$RescueTimer.stop()
+		stop_aura()
+
+func stop_aura():
+	currently_rescuing = null
+	$RescueTimer.stop()
+	get_node('Aura').queue_free()
 
 func get_enemy_in_range():
 	for enemy in get_tree().get_nodes_in_group('enemies'):
@@ -100,4 +106,4 @@ func _on_RescueTimer_timeout():
 		if len(get_tree().get_nodes_in_group('enemies')) == 1:
 			get_parent().win_game()
 		currently_rescuing.queue_free()
-		currently_rescuing = null
+		stop_aura()
