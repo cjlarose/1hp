@@ -1,23 +1,24 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://Projectile.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Aura.tscn" type="PackedScene" id=3]
 [ext_resource path="res://audio/sfx/ThunkSoundEffect.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/Player/20190803_162314.png" type="Texture" id=5]
-[ext_resource path="res://assets/Player/sketch1564865564137.png" type="Texture" id=6]
-[ext_resource path="res://assets/Player/sketch1564865766390.png" type="Texture" id=7]
-[ext_resource path="res://assets/Player/sketch1564865851491.png" type="Texture" id=8]
-[ext_resource path="res://assets/Player/sketch1564867457772.png" type="Texture" id=9]
+[ext_resource path="res://audio/sfx/FanfareSoundEffect.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/Player/20190803_162314.png" type="Texture" id=6]
+[ext_resource path="res://assets/Player/sketch1564865564137.png" type="Texture" id=7]
+[ext_resource path="res://assets/Player/sketch1564865766390.png" type="Texture" id=8]
+[ext_resource path="res://assets/Player/sketch1564865851491.png" type="Texture" id=9]
+[ext_resource path="res://assets/Player/sketch1564867457772.png" type="Texture" id=10]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "Thrust",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 9 ) ],
+"frames": [ ExtResource( 10 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
@@ -30,6 +31,7 @@ script = ExtResource( 1 )
 Projectile = ExtResource( 2 )
 Aura = ExtResource( 3 )
 ThunkSoundEffect = ExtResource( 4 )
+FanfareSoundEffect = ExtResource( 5 )
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 rotation = 2.39983

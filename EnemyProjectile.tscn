@@ -18,6 +18,6 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.33, 0.33 )
 frames = ExtResource( 3 )
-frame = 2
+frame = 3
 playing = true
 [connection signal="area_entered" from="." to="." method="_on_EnemyProjectile_area_entered"]

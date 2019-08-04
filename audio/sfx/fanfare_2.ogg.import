@@ -11,5 +11,5 @@ dest_files=[ "res://.import/fanfare_2.ogg-34d7989a1a05123ad8c8bd74803dce81.oggst
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

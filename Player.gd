@@ -3,6 +3,7 @@ extends Area2D
 export (PackedScene) var Projectile
 export (PackedScene) var Aura
 export (PackedScene) var ThunkSoundEffect
+export (PackedScene) var FanfareSoundEffect
 
 export (int) var SPEED = 500
 export (int) var TRACTOR_RANGE = 200
@@ -115,6 +116,7 @@ func unfreeze():
 	frozen = false
 
 func _on_RescueTimer_timeout():
+	add_child(FanfareSoundEffect.instance())
 	if currently_rescuing:
 		if len(get_tree().get_nodes_in_group('enemies')) == 1:
 			get_parent().win_game()
