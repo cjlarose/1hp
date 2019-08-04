@@ -44,7 +44,7 @@ func take_damage():
 			$AnimatedSprite.animation = 'default'
 		1:
 			$AnimatedSprite.animation = '1hp'
-			$CollisionShape2D.set_scale(Vector2(0.9, 0.6))
+			$CollisionShape2D.set_scale(Vector2(0.9, 0.5))
 		_:
 			$AnimatedSprite.animation = 'default'
 
